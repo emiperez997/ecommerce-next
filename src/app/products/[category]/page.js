@@ -1,5 +1,5 @@
-import { ProductList } from "../components/ProductList";
 import Link from "next/link";
+import { ProductList } from "../components/ProductList";
 import { Suspense } from "react";
 import { Spinner } from "@/components/Spinner/Spinner";
 
@@ -10,15 +10,6 @@ export async function generateMetadata({ params, searchParams }, parent) {
     description: `Products of ${category} category`,
     keywords: ["products", "categories", category],
   };
-}
-
-export function generateStaticParams() {
-  return [
-    { category: "all" },
-    { category: "electronics" },
-    { category: "clothing" },
-    { category: "home-appliances" },
-  ];
 }
 
 export default async function CategoryPage({ params }) {
